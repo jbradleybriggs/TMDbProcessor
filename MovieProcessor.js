@@ -2,7 +2,7 @@
 *
 * @author J. Bradley Briggs
 */
-/*module.exports = */class MovieProcessor {
+module.exports = class MovieProcessor {
     constructor(moviePath) {
         var TMDbMovieInfo = require('./TMDbMovieInfo');
         this.chalk = require('chalk');
@@ -149,67 +149,14 @@
                         });
                 }
                 else {
-                    this.__throwError(`${this.moviePath} could not be processed.`);
+                    this.__throwError(`${this.moviePath} could not be processed, or movie not found.`);
                     resolve();
                 }
             })
         })
     }
-
-    // add() {
-    //     return new Promise((resolve, reject) => {
-    //         this.movieInfo.getAllInfo(this.moviePath).then((json) => {
-    //             if (json) {
-    //                 this.db.set(
-    //                     {
-    //                         title: encodeURI(json.original_title),
-    //                         year: json.release_date,
-    //                         genres: encodeURI(this.__jsonArrayGetFields(json.genres)),
-    //                         overview: encodeURI(json.overview),
-    //                         studios: encodeURI(this.__jsonArrayGetFields(json.production_companies)),
-    //                         duration: json.duration,
-    //                         homepage: encodeURI(json.homepage),
-    //                         adult: (json.adult == 'true' ? 1 : 0),
-    //                         collection: encodeURI(json.belongs_to_collection),
-    //                         budget: json.budget,
-    //                         tmdb_id: json.id,
-    //                         imdb_id: json.imdb_id,
-    //                         language: json.language,
-    //                         popularity: json.popularity,
-    //                         poster: `UNHEX('${json.poster_path}')`,
-    //                         status: json.status,
-    //                         tagline: encodeURI(json.tagline),
-    //                         vote_average: json.vote_average,
-    //                         vote_count: json.vote_count,
-    //                         poster_backdrop: `UNHEX('${json.backdrop_path}')`,
-    //                         cast: 'cast',
-    //                         revenue: json.revenue,
-    //                         spoken_languages: encodeURI(this.__jsonArrayGetFields(json.spoken_languages)),
-    //                         target: encodeURI(this.moviePath)
-    //                     }
-    //                 )
-    //                     .then((res) => { this.db.close(); resolve(res) }, (rej) => { this.db.close(); reject(rej) })
-    //                     .catch((rej) => { this.db.close(); });
-    //             }
-    //             else {
-    //                 console.log(`${this.moviePath} could not be added.`);
-    //                 resolve();
-    //             }
-    //         });
-    //     });
-    // }
-
-    // delete() {
-
-    // }
-
-    // update() {
-
-    // }
-
-
 }
 
-var mov = new MovieProcessor("I:\\Movies\\S\\The Sunset Limited (2011)\\Avengers.mp4");
-mov.process(true).then((res) => console.log(res));
-console.log("[PROCESSING]");
+// var mov = new MovieProcessor("I:\\Movies\\S\\The Sunset Limited (2011)\\Avengers.mp4");
+// mov.process(true).then((res) => console.log(res));
+// console.log("[PROCESSING]");
