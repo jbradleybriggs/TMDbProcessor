@@ -1,0 +1,19 @@
+{
+  "name": "@drama_llama/tmdbprocessor",
+  "version": "1.0.0",
+  "description": "Gets movie information from TMDb",
+  "main": "MovieProcessor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "TMDb",
+    "Movie",
+    "Info"
+  ],
+  "author": "J. Bradley Briggs",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2"
+  }
+}
